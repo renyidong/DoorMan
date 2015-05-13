@@ -37,10 +37,6 @@
 
 #include <stdio.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /**
  * \name SECTION: Module settings
  *
@@ -121,10 +117,6 @@ int platform_set_fprintf( int (*fprintf_func)( FILE *stream, const char *,
                                                ... ) );
 #else
 #define polarssl_fprintf    fprintf
-#endif
-
-#ifdef __cplusplus
-}
 #endif
 
 #endif /* platform.h */

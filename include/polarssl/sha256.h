@@ -45,10 +45,6 @@ typedef UINT32 uint32_t;
 // Regular implementation
 //
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /**
  * \brief          SHA-256 context structure
  */
@@ -108,17 +104,11 @@ void sha256_finish( __xdata sha256_context *ctx, unsigned char output[32] );
 // void sha256_process( sha256_context *ctx, const unsigned char data[64] );
 void sha256_process( __xdata sha256_context * ctx, const unsigned char * data );
 
-#ifdef __cplusplus
-}
-#endif
 
 #else  /* POLARSSL_SHA256_ALT */
 #include "sha256_alt.h"
 #endif /* POLARSSL_SHA256_ALT */
 
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /**
  * \brief          Output = SHA-256( input buffer )
@@ -199,9 +189,5 @@ void sha256_hmac( const unsigned char *key, size_t keylen,
  * \return         0 if successful, or 1 if the test failed
  */
 int sha256_self_test( int verbose );
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif /* sha256.h */
